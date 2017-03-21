@@ -3,6 +3,7 @@ var gulp = require('gulp'),
     sass = require('gulp-ruby-sass'),
     sourcemaps = require('gulp-sourcemaps'),
     webserver = require('gulp-webserver');
+    autoprefixer = require('gulp-autoprefixer');
 
 var browserSync = require('browser-sync').create();
 
@@ -15,6 +16,7 @@ gulp.task('sass', function () {
         console.error('Error!', err.message);
     })
     .pipe(sourcemaps.write())
+    .pipe(autoprefixer())
     .pipe(gulp.dest('app/css'))
     .pipe(browserSync.reload({
       stream: true

@@ -20,7 +20,7 @@ body {
 }
 
 .bubble-wrap {
-  position: absolute;
+  position: relative;
   width: 30%;//fallback
   width: 60vw;
   min-width: 250px;
@@ -30,5 +30,6 @@ body {
   margin-left: auto;
   margin-right: auto;
   padding: 8em;
+  margin-top: 10vh;
   text-align: center;
 }
