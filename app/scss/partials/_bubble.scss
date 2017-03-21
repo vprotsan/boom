@@ -28,10 +28,10 @@
 
     //Sharp spikes-triangles for a bubble-wrap
     .triangle.one {
-        left: 30%;
-        bottom: 40%;
+        left: 24%;
+        bottom: 27%;
         @include border-width(0, 30px, 200px, 50px);
-        @include border-width(0, 9vh, 31vh, 5vh);
+        @include border-width(0, 9vh, 31vh, 7vh);
         transform: rotate(-5deg);
         }
 
@@ -101,19 +101,137 @@
     }
 
     .triangle.eleven {
-       left: 28%;
+       left: 29%;
        top: 58%;
-       @include border-width(0, 6vh, 23vh, 6vh);
-       transform: rotate(175deg);
+       @include border-width(0, 6vh, 25vh, 5vh);
+       transform: rotate(197deg);
     }
 
     .triangle.twelve {
        left: 35%;
-       top: 65%;
-       @include border-width(0, 7vh, 23vh, 7vh);
-       transform: rotate(170deg);
+       top: 60%;
+       @include border-width(0, 7vh, 19vh, 7vh);
+       transform: rotate(184deg);
     }
 
+    //copying first 12 triangles and changing left to right and negative degree values to opposite
+    .triangle.thirteen {
+        right: 30%;
+        bottom: 63%;
+        @include border-width(0, 30px, 200px, 50px);
+        @include border-width(0, 9vh, 31vh, 5vh);
+        transform: rotate(29deg);
+        }
+
+    .triangle.thirteen-2 {
+        right: 16%;
+        bottom: 33%;
+        @include border-width(0, 30px, 200px, 50px);
+        @include border-width(0, 11vh, 32vh, 16vh);
+        transform: rotate(12deg);
+        }
+
+    .triangle.thirteen-3 {
+        right: 33%;
+        bottom: 40%;
+        @include border-width(0, 30px, 200px, 50px);
+        @include border-width(0, 14vh, 31vh, 11vh);
+        transform: rotate(3deg);
+        }
+
+    .triangle.fourteen {
+        right: 17%;
+        bottom: 70%;
+        @include border-width(0, 40px, 180px, 50px);
+        @include border-width(0, 3vh, 25vh, 6vh);
+        transform: rotate(33deg);
+        }
+
+    .triangle.fifteen {
+       right: 4%;
+       bottom: 55%;
+       @include border-width(0, 40px, 180px, 50px);
+       @include border-width(0, 8vh, 22vh, 8vh);
+       transform: rotate(44deg);
+    }
+
+    .triangle.sixteen {
+       right: -10%;
+       top: -25%;
+       @include border-width(0, 17vh, 38vh, 10vh);
+       transform: rotate(64deg);
+    }
+
+    .triangle.seventeen {
+       right: -4%;
+       top: -6%;
+       @include border-width(0, 10vh, 25vh, 12vh);
+       transform: rotate(78deg);
+    }
+
+    .triangle.seventeen-2 {
+       right: -4%;
+       top: -7%;
+       @include border-width(0, 4vh, 41vh, 9vh);
+       transform: rotate(92deg);
+    }
+
+    .triangle.seventeen-3 {
+       right: -4%;
+       top: -9%;
+       @include border-width(0, 9vh, 37vh, 10vh);
+       transform: rotate(81deg);
+    }
+
+    .triangle.eighteen {
+       right: -7%;
+       top: 0;
+       @include border-width(0, 8vh, 33vh, 8vh);
+       transform: rotate(100deg);
+    }
+
+    .triangle.nineteen {
+       right: -10%;
+       top: 50%;
+       @include border-width(0, 9vh, 20vh, 5vh);
+       transform: rotate(122deg);
+    }
+
+    .triangle.twenty {
+       right: 4%;
+       top: 60%;
+       @include border-width(0, 5vh, 20vh, 5vh);
+       transform: rotate(131deg);
+    }
+
+    .triangle.twentyone {
+       right: 16%;
+       top: 50%;
+       @include border-width(0, 6vh, 20vh, 6vh);
+       transform: rotate(143deg);
+    }
+
+    .triangle.twentytwo {
+       right: 15%;
+       top: 80%;
+       @include border-width(0, 10vh, 22vh, 4vh);
+       transform: rotate(158deg);
+    }
+
+    .triangle.twentythree {
+       right: 28%;
+       top: 58%;
+       @include border-width(0, 6vh, 23vh, 6vh);
+       transform: rotate(-203deg);
+    }
+
+    .triangle.twentyfour {
+       right: 35%;
+       top: 78%;
+       @include border-width(0, 7vh, 21vh, 7vh);
+       transform: rotate(-180deg);
+    }
+    //end copy
 
     }
 }//END .white-bubble, .black-bubble

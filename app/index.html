@@ -36,8 +36,13 @@ var halfHeight = height / 2;
 
   var halfHeightText = heightText / 2;
   var halfWidthText = widthText / 2;
-  $('.boom, .boom-shadow').css('left', halfWidthText);
-  $('.boom, .boom-shadow').css('top', halfHeightText);
+
+  //HINT (parseInt("40px".replace(/px/,""))+60)+"px"
+  var adjustedLeft = parseInt(halfWidthText + 40) + "px";
+  var adjustedHeight = parseInt(halfHeightText - 20) + "px";
+
+  $('.boom, .boom-shadow').css('left', adjustedLeft);
+  $('.boom, .boom-shadow').css('top', adjustedHeight);
 
 
   //positions bubblewrap in center
@@ -47,8 +52,8 @@ var halfHeight = height / 2;
   var winHeight = $(window).height();
   var winWidth = $(window).width();
 
-  var left = (winWidth - innerBubbleWidth) / 2 + 20;
-  var top =  (winHeight - innerBubbleHeight) / 2 - 20;
+  var left = (winWidth - innerBubbleWidth) / 2;
+  var top =  (winHeight - innerBubbleHeight) / 2;
 
   $('.bubble-wrap').css('top', top);
   $('.bubble-wrap').css('left', left);
@@ -90,13 +95,29 @@ var halfHeight = height / 2;
             <div class="triangle ten"></div>
             <div class="triangle eleven"></div>
             <div class="triangle twelve"></div>
+            
             <div class="triangle thirteen"></div>
+
+            <div class="triangle thirteen-2"></div>
+            <div class="triangle thirteen-3"></div>
+
             <div class="triangle fourteen"></div>
             <div class="triangle fifteen"></div>
             <div class="triangle sixteen"></div>
             <div class="triangle seventeen"></div>
-            <div class="triangle eighteen"></div>
+
+            <div class="triangle seventeen-2"></div>
+            <div class="triangle seventeen-3"></div>
+
+            <div class="triangle eightteen"></div>
             <div class="triangle nineteen"></div>
+            <div class="triangle twenty"></div>
+            <div class="triangle twentyone"></div>
+            <div class="triangle twentytwo"></div>
+            <div class="triangle twentythree"></div>
+            <div class="triangle twentyfour"></div>
+            
+           
           </div><!--end trialnge-wrapper-->
       </div><!--end white bubble-->
 
@@ -114,13 +135,28 @@ var halfHeight = height / 2;
             <div class="triangle ten"></div>
             <div class="triangle eleven"></div>
             <div class="triangle twelve"></div>
+
             <div class="triangle thirteen"></div>
+
+            <div class="triangle thirteen-2"></div>
+            <div class="triangle thirteen-3"></div>
+
             <div class="triangle fourteen"></div>
             <div class="triangle fifteen"></div>
             <div class="triangle sixteen"></div>
             <div class="triangle seventeen"></div>
-            <div class="triangle eighteen"></div>
+
+            <div class="triangle seventeen-2"></div>
+            <div class="triangle seventeen-3"></div>
+
+            <div class="triangle eightteen"></div>
             <div class="triangle nineteen"></div>
+            <div class="triangle twenty"></div>
+            <div class="triangle twentyone"></div>
+            <div class="triangle twentytwo"></div>
+            <div class="triangle twentythree"></div>
+            <div class="triangle twentyfour"></div>
+            
         </div><!--end trialnge-wrapper-->
       </div><!--end black bubble-->
 

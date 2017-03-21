@@ -13,8 +13,7 @@
     margin-right: auto;
     font-family: sans-serif;
     line-height: 1.34;
-
-  }
+    }
   
     p {
       position: absolute;
@@ -48,10 +47,47 @@
     .boom-shadow {
       color: $blackcolor;
       transform: scale(1.04) scaleX(1.02) translateY(0.05em);
-    }
+
+      .char2::after, .char5::after, .char6::after, .char7::after {
+        position: absolute;
+        display: block;
+        content: '';
+        width: 20px;
+        height: 30px;
+        border-radius: 50%;
+        background: #00bcf3;
+        z-index: -1;
+      }
+
+      .char2::after {
+        left: 53%;
+        top: 5%;
+      }
+
+      .char5::after {
+        left: 53%;
+        top: 2%;
+      }
+
+      .char6::after {
+        left: 53%;
+        top: 2%;
+      }
+
+      .char7::after {
+        left: 15%;
+        top: 4%;
+        width: 40px;
+        height: 40px;
+      }
+}
 
     .boom {
       color: #ffc412;
+
+      .char9 {
+        color: $redcolor;
+      }
     }
 
 
