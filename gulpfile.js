@@ -57,11 +57,12 @@ gulp.task('sass', function () {
         console.error('Error!', err.message);
     })
     .pipe(sourcemaps.write())
+    .pipe(autoprefixer())
     .pipe(gulp.dest('app/css'))
     .pipe(browserSync.reload({
       stream: true
     }))
-})
+});
 
 
 gulp.task('sass-build', function() {
@@ -148,11 +149,23 @@ gulp.task('clean:dist', function() {
 // Build Sequences
 // ---------------
 
-gulp.task('default', function(callback) {
-  runSequence(['browserSync','sass'], 'watch',
-    callback
-  )
-})
+gulp.task('watch', ['browserSync', 'sass'], function() {
+
+  gulp.watch(['app/scss/**/*.scss'], ['sass']);
+      // Reloads the browser whenever HTML or JS files change
+  gulp.watch('app/*.html', browserSync.reload);
+
+});
+
+gulp.task('webserver', function() {
+    gulp.src('app/')
+        .pipe(webserver({
+            livereload: true,
+            open: true
+        }));
+});
+
+gulp.task('default', ['sass', 'watch', 'browserSync', 'webserver']);
 
 gulp.task('build', function(callback) {
   runSequence(

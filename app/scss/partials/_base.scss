@@ -15,7 +15,27 @@ body {
   height: 100vh;
   margin: 0;
   //padding: 2em;
-  background: url(../img/bg-dots.jpg) repeat;
+ //background: url(../img/bg-dots.jpg) repeat;
+  
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  border: none;
+  font: normal 100%/normal Arial, Helvetica, sans-serif;
+  color: rgb(255, 255, 255);
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  background: -webkit-radial-gradient(57% 57%, circle closest-side, #ff8706 0, #ff8706 11%, #ff8706 40%, rgba(0,0,0,0) 40%, rgba(0,0,0,0) 100%), -webkit-radial-gradient(57% 57%, circle closest-side, #ff8706 0, #ff8706 30%, #ff8706 40%, rgba(0,0,0,0) 40%, rgba(0,0,0,0) 100%), -webkit-radial-gradient(closest-side, #ffc319 0, #f7c012 100%);
+  background: -moz-radial-gradient(57% 57%, circle closest-side, #ff8706 0, #ff8706 11%, #ff8706 40%, rgba(0,0,0,0) 40%, rgba(0,0,0,0) 100%), -moz-radial-gradient(57% 57%, circle closest-side, #ff8706 0, #ff8706 30%, #ff8706 40%, rgba(0,0,0,0) 40%, rgba(0,0,0,0) 100%), -moz-radial-gradient(closest-side, #ffc319 0, #f7c012 100%);
+  background: radial-gradient(circle closest-side at 57% 57%, #ff8706 0, #ff8706 11%, #ff8706 40%, rgba(0,0,0,0) 40%, rgba(0,0,0,0) 100%), radial-gradient(circle closest-side at 57% 57%, #ff8706 0, #ff8706 30%, #ff8706 40%, rgba(0,0,0,0) 40%, rgba(0,0,0,0) 100%), radial-gradient(closest-side, #ffc319 0, #f7c012 100%);
+  background-position: 0 0, 10px 10px, 100% 100%;
+  -webkit-background-origin: padding-box;
+  background-origin: padding-box;
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  -webkit-background-size: 20px 20px, 20px 20px, auto auto;
+  background-size: 20px 20px, 20px 20px, auto auto;
+
   overflow-y: hidden;
 }
 
