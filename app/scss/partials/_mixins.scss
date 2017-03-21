@@ -1,0 +1,38 @@
+@mixin border-width( $arg0, $arg1, $arg2, $arg3) {
+  border-top-width: $arg0;
+  border-right-width: $arg1;
+  border-bottom-width: $arg2;
+  border-left-width: $arg3;
+}
+
+
+
+@mixin rotated-text($num-letters: num, $angle-span: deg, $angle-offset: offsetdeg) {
+	$angle-per-char: $angle-span / $num-letters;
+
+	@for $i from 1 through $num-letters {
+		.char#{$i} {
+		   transform: rotate($angle-offset + $angle-per-char * $i);
+
+		}
+	}
+}
+
+$supported: true!default; // this makes this stylesheet output media queries from our mixin
+
+@mixin breakpoint($screenWidth, $support: $supported) {
+	@if $support == true {
+		// output the mixin content inside of a media query
+	  	@media screen and (min-width: $screenWidth) {
+            @content;
+        }
+	}
+	@else {
+		// output ALL the style content inside the mixin, without a media query
+		@content;
+	}
+}
+
+
+
+

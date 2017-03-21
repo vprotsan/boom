@@ -1,0 +1,34 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
+  line-height: 1.2em;
+  color: #000;
+  background: #fff;
+}
+
+.wrapper {
+  position: relative;
+  width: auto;
+  height: auto;
+  height: 100vh;
+  margin: 0;
+  //padding: 2em;
+  background: url(../img/bg-dots.jpg) repeat;
+  overflow-y: hidden;
+}
+
+.bubble-wrap {
+  position: absolute;
+  width: 30%;//fallback
+  width: 60vw;
+  min-width: 250px;
+  max-width: 450px;
+  height: 35%;//fallback
+  height: 35vh;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 8em;
+  text-align: center;
+}

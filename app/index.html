@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<title>Boom</title>
+<link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script type="text/javascript" src="assets/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="assets/lettering.js-master/jquery.lettering.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function() {
+var width = $('.white-bubble').width();
+var height = $('.white-bubble').height();
+
+var halfWidth = width / 2;
+var halfHeight = height / 2;
+
+        if ( width <= 450 ) {
+          $('.white-bubble, .black-bubble').css("margin-left", - halfWidth);
+        } else if ( width <= 150) {
+          $('.white-bubble, .black-bubble').css("margin-left", "-75px");
+        } else {
+          $('.white-bubble, .black-bubble').css("margin-left","-225px");
+        }
+
+        if ( height <= 250 ) {
+          $('.white-bubble, .black-bubble').css("margin-top", - halfHeight);
+        } else {
+          $('.white-bubble, .black-bubble').css("margin-top","-125px");
+        }
+
+  //positions text
+  var widthText = $('.boom').width();
+  var heightText = $('.boom').height();
+
+  var halfHeightText = heightText / 2;
+  var halfWidthText = widthText / 2;
+  $('.boom, .boom-shadow').css('left', halfWidthText);
+  $('.boom, .boom-shadow').css('top', halfHeightText);
+
+
+  //positions bubblewrap in center
+  var innerBubbleWidth = $('.bubble-wrap').innerWidth();
+  var innerBubbleHeight = $('.bubble-wrap').innerHeight();
+
+  var winHeight = $(window).height();
+  var winWidth = $(window).width();
+
+  var left = (winWidth - innerBubbleWidth) / 2 + 20;
+  var top =  (winHeight - innerBubbleHeight) / 2 - 20;
+
+  $('.bubble-wrap').css('top', top);
+  $('.bubble-wrap').css('left', left);
+
+});
+
+
+ $(document).ready(function() {
+    $(".boom, .boom-shadow").lettering();
+ });
+
+
+</script>
+
+</head>
+<body>
+  <main>
+  <div class="wrapper">
+
+    <div class="bubble-wrap">
+
+      <div class="text">
+        <p class="boom-shadow">404ERROR!</p>
+        <p class="boom">404ERROR!</p>
+        <span class="textLine">Sorry, page you are trying to reach is not available</span>
+      </div>
+
+      <div class="white-bubble">
+        <div class="triangle-wrapper">
+            <div class="triangle one"></div>
+            <div class="triangle two"></div>
+            <div class="triangle three"></div>
+            <div class="triangle four"></div>
+            <div class="triangle five"></div>
+            <div class="triangle six"></div>
+            <div class="triangle seven"></div>
+            <div class="triangle eight"></div>
+            <div class="triangle nine"></div>
+            <div class="triangle ten"></div>
+            <div class="triangle eleven"></div>
+            <div class="triangle twelve"></div>
+            <div class="triangle thirteen"></div>
+            <div class="triangle fourteen"></div>
+            <div class="triangle fifteen"></div>
+            <div class="triangle sixteen"></div>
+            <div class="triangle seventeen"></div>
+            <div class="triangle eighteen"></div>
+            <div class="triangle nineteen"></div>
+          </div><!--end trialnge-wrapper-->
+      </div><!--end white bubble-->
+
+      <div class="black-bubble">
+        <div class="triangle-wrapper">
+            <div class="triangle one"></div>
+            <div class="triangle two"></div>
+            <div class="triangle three"></div>
+            <div class="triangle four"></div>
+            <div class="triangle five"></div>
+            <div class="triangle six"></div>
+            <div class="triangle seven"></div>
+            <div class="triangle eight"></div>
+            <div class="triangle nine"></div>
+            <div class="triangle ten"></div>
+            <div class="triangle eleven"></div>
+            <div class="triangle twelve"></div>
+            <div class="triangle thirteen"></div>
+            <div class="triangle fourteen"></div>
+            <div class="triangle fifteen"></div>
+            <div class="triangle sixteen"></div>
+            <div class="triangle seventeen"></div>
+            <div class="triangle eighteen"></div>
+            <div class="triangle nineteen"></div>
+        </div><!--end trialnge-wrapper-->
+      </div><!--end black bubble-->
+
+    </div><!-- end bubble-wrap-->
+  </div><!--end wrapper-->
+</main>
+</body>
+</html>

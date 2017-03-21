@@ -1,0 +1,130 @@
+.white-bubble {
+ z-index: 10;
+
+    .triangle {
+      @extend %triangle-basics;
+      border-color: transparent transparent #fff transparent;
+    }
+}
+
+.white-bubble, .black-bubble {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  min-width: 150px;
+  max-width: 400px;
+  width: $white-bubble-width;
+  height: 80%;
+  max-height: 250px;
+  height: $white-bubble-height;
+  background: #fff;
+  border-radius: 50%;
+
+.triangle-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+    //Sharp spikes-triangles for a bubble-wrap
+    .triangle.one {
+        left: 30%;
+        bottom: 40%;
+        @include border-width(0, 30px, 200px, 50px);
+        @include border-width(0, 9vh, 31vh, 5vh);
+        transform: rotate(-5deg);
+        }
+
+    .triangle.two {
+        left: 17%;
+        bottom: 70%;
+        @include border-width(0, 40px, 180px, 50px);
+        @include border-width(0, 5vh, 28vh, 5vh);
+        transform: rotate(-10deg);
+        }
+
+    .triangle.three {
+       left: 4%;
+       bottom: 55%;
+       @include border-width(0, 40px, 180px, 50px);
+       @include border-width(0, 8vh, 22vh, 8vh);
+       transform: rotate(-26deg);
+    }
+
+    .triangle.four {
+       left: -10%;
+       top: -25%;
+       @include border-width(0, 8vh, 33vh, 8vh);
+       transform: rotate(-55deg);
+    }
+
+    .triangle.five {
+       left: 0;
+       top: -5%;
+       @include border-width(0, 8vh, 33vh, 8vh);
+       transform: rotate(-80deg);
+    }
+
+    .triangle.six {
+       left: -7%;
+       top: 0;
+       @include border-width(0, 8vh, 33vh, 8vh);
+       transform: rotate(-100deg);
+    }
+
+    .triangle.seven {
+       left: -10%;
+       top: 50%;
+       @include border-width(0, 9vh, 20vh, 5vh);
+       transform: rotate(-135deg);
+    }
+
+    .triangle.eight {
+       left: 4%;
+       top: 60%;
+       @include border-width(0, 5vh, 20vh, 5vh);
+       transform: rotate(-165deg);
+    }
+
+    .triangle.nine {
+       left: 10%;
+       top: 50%;
+       @include border-width(0, 6vh, 20vh, 6vh);
+       transform: rotate(-165deg);
+    }
+
+    .triangle.ten {
+       left: 15%;
+       top: 80%;
+       @include border-width(0, 6vh, 23vh, 6vh);
+       transform: rotate(-165deg);
+    }
+
+    .triangle.eleven {
+       left: 28%;
+       top: 58%;
+       @include border-width(0, 6vh, 23vh, 6vh);
+       transform: rotate(175deg);
+    }
+
+    .triangle.twelve {
+       left: 35%;
+       top: 65%;
+       @include border-width(0, 7vh, 23vh, 7vh);
+       transform: rotate(170deg);
+    }
+
+
+    }
+}//END .white-bubble, .black-bubble
+
+.black-bubble {
+  background: $blackcolor;
+  transform: scale(1.05) scaleX(1.05) translateY(0.5em);
+  z-index: 1;
+
+  .triangle {
+    @extend %triangle-basics;
+    border-color: transparent transparent $blackcolor transparent;
+  }
+}
