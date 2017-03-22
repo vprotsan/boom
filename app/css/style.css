@@ -120,19 +120,28 @@ body {
   .text .textLine {
     position: absolute;
     display: block;
-    width: 180px;
+    width: 320px;
     bottom: 10%;
     color: #ff1b27;
     font-family: sans-serif;
     font-weight: bold;
     left: 50%;
     line-height: 1.34;
-    margin-left: -90px; }
+    font-size: 3em;
+    margin-left: -160px; }
+    @media screen and (min-width: 480px) {
+      .text .textLine {
+        width: 180px;
+        margin-left: -90px;
+        font-size: 100%; } }
   .text p {
     position: absolute;
     display: block;
+    left: 45%;
+    top: 10%;
     font-family: 'Bangers', cursive;
     font-size: 3em;
+    font-size: 19vw;
     letter-spacing: -5px; }
     @media screen and (min-width: 480px) {
       .text p {
@@ -480,7 +489,7 @@ body {
 
 .black-bubble {
   background: #252122;
-  transform: scale(1.05) scaleX(1.05) translateY(0.5em);
+  transform: scale(1.05) scaleX(1.09) translateY(0.7em);
   z-index: 1; }
   .black-bubble .triangle {
     border-color: transparent transparent #252122 transparent; }

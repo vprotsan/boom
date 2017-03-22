@@ -1,3 +1,5 @@
+$(".boom, .boom-shadow").lettering();
+
 
 var width = $('.white-bubble').width();
 var height = $('.white-bubble').height();
@@ -20,18 +22,18 @@ var halfHeight = height / 2;
         }
 
   //positions text
-  var widthText = $('.boom').width();
-  var heightText = $('.boom').height();
+  // var widthText = $('.boom').width();
+  // var heightText = $('.boom').height();
 
-  var halfHeightText = heightText / 2;
-  var halfWidthText = widthText / 2;
+  // var halfHeightText = heightText / 2;
+  // var halfWidthText = widthText / 2;
 
-  //HINT (parseInt("40px".replace(/px/,""))+60)+"px"
-  var adjustedLeft = parseInt(halfWidthText + 40) + "px";
-  var adjustedHeight = parseInt(halfHeightText - 20) + "px";
+  // //HINT (parseInt("40px".replace(/px/,""))+60)+"px"
+  // var adjustedLeft = parseInt(halfWidthText + 40) + "px";
+  // var adjustedHeight = parseInt(halfHeightText - 20) + "px";
 
-  $('.boom, .boom-shadow').css('left', adjustedLeft);
-  $('.boom, .boom-shadow').css('top', adjustedHeight);
+  // $('.boom, .boom-shadow').css('left', adjustedLeft);
+  // $('.boom, .boom-shadow').css('top', adjustedHeight);
 
   //positions bubblewrap in center
   // var innerBubbleWidth = $('.bubble-wrap').innerWidth();
@@ -47,6 +49,5 @@ var halfHeight = height / 2;
   // $('.bubble-wrap').css('left', left);
 
 
-$(".boom, .boom-shadow").lettering();
 
 

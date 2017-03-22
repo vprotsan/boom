@@ -18,20 +18,6 @@ var connect = require('gulp-connect-php');
 
 
 // Development Tasks 
-// -----------------
-
-// Start browserSync server
-
-// gulp.task('connect', function() {
-//   connect.server({}, function (){
-//     browserSync({
-//       proxy: '127.0.0.1:8000',
-//       baseDir: 'app'
-//     });
-//   });
-  
-// });
-
 gulp.task('browserSync', function() {
   browserSync.init({
     server: {
@@ -40,30 +26,15 @@ gulp.task('browserSync', function() {
   })
 })
 
-// gulp.task('webserver', function() {
-//     gulp.src('app/')
-//         .pipe(webserver({
-//             livereload: true,
-//             open: true
-//         }));
-// })
-
-gulp.task('sass', function () {
-    return sass('app/scss/*.scss', {
-      sourcemap: true,
-      style: 'expanded'
-    })
-    .on('error', function (err) {
-        console.error('Error!', err.message);
-    })
-    .pipe(sourcemaps.write())
-    .pipe(autoprefixer())
-    .pipe(gulp.dest('app/css'))
-    .pipe(browserSync.reload({
-      stream: true
-    }))
-});
-
+gulp.task('sass', () =>
+    sassRuby('app/scss/*.scss')
+        .on('error', sass.logError)
+        .pipe(gulp.dest('app/css'))
+       // .pipe()
+       // .pipe(cssnano())
+       // .pipe(gulp.dest('dist/css'))
+        .pipe(browserSync.reload({  stream: true   }))
+);
 
 gulp.task('sass-build', function() {
   return gulp.src('app/scss/*.scss') // Gets all files ending with .scss in app/scss and children dirs
@@ -86,30 +57,15 @@ gulp.task('compress', function () {
         .pipe(gulp.dest('dist/'))      
 })
 
-// gulp.task('compressjshtmlHTML', function () {
-//     return gulp.src('app/*.html')
-//         .pipe(useref())
-//         .pipe(gulpIf('*.html', htmlmin({collapseWhitespace: true})))
-//         //.pipe(htmlmin({collapseWhitespace: true}))
-//         .pipe(gulpIf('*.js', uglify().on('error', function(e){
-//             console.log(e);  })))
-//         .pipe(gulpIf('*.css', autoprefixer()))
-//         .pipe(gulpIf('*.css', cssnano()))
-//         .pipe(gulp.dest('dist/'))      
-// });
-
-
 // Watchers
 gulp.task('watch', function() {
   gulp.watch('app/scss/**/*', ['sass']);
   gulp.watch('app/js/*', browserSync.reload);
   gulp.watch('app/css/**/*.css', browserSync.reload);
-  gulp.watch('app/*.html', browserSync.reload);
-  //gulp.watch('app/../*.php').on('change', function () {
-    browserSync.reload()
-  })
-
-
+  gulp.watch('app/*.php', browserSync.reload);
+  gulp.watch('app/../*.php').on('change', function () {
+    browserSync.reload()});
+})
 
 // Optimizing Images 
 gulp.task('images', function() {
@@ -120,20 +76,6 @@ gulp.task('images', function() {
     })))
     .pipe(gulp.dest('dist/images'))
 });
-
-// Copying fonts 
-// gulp.task('fonts', function() {
-//   return gulp.src('app/fonts/**/*')
-//     .pipe(gulp.dest('dist/fonts'))
-// })
-
-
-// gulp.task('js', function() {
-//   return gulp.src('app/js/*.js')
-//     .pipe(uglify().on('error', function(e){
-//             console.log(e);  }))
-//     .pipe(gulp.dest('dist/js'))
-// })
 
 // Cleaning 
 gulp.task('clean', function() {
@@ -146,26 +88,11 @@ gulp.task('clean:dist', function() {
   return del.sync(['dist/**/*', '!dist/images', '!dist/images/**/*']);
 });
 
-// Build Sequences
-// ---------------
-
-gulp.task('watch', ['browserSync', 'sass'], function() {
-
-  gulp.watch(['app/scss/**/*.scss'], ['sass']);
-      // Reloads the browser whenever HTML or JS files change
-  gulp.watch('app/*.html', browserSync.reload);
-
-});
-
-gulp.task('webserver', function() {
-    gulp.src('app/')
-        .pipe(webserver({
-            livereload: true,
-            open: true
-        }));
-});
-
-gulp.task('default', ['sass', 'watch', 'browserSync', 'webserver']);
+gulp.task('default', function(callback) {
+  runSequence(['sass', 'browserSync'], 'watch',
+    callback
+  )
+})
 
 gulp.task('build', function(callback) {
   runSequence(
